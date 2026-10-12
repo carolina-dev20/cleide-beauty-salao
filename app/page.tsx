@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useState } from "react";
 import FadeIn from "./components/FadeIn";
 
+import AgendamentoForm from "./components/AgendamentoForm";
+
+
 /* LINKS */
 
 const whatsappUrl =
@@ -15,6 +18,9 @@ const instagramUrl =
 
 const mapsUrl =
   "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A";
+
+  
+
 
 /* SERVIÇOS */
 
@@ -632,6 +638,11 @@ export default function Home() {
       </section>
 
       {/* RODAPÉ */}
+
+      
+{/* FORMULÁRIO DE AGENDAMENTO */}
+<AgendamentoForm />
+
 
       <footer className="bg-[#151515] px-8 pb-10 pt-20 text-[#F5F1EB] md:px-16 lg:px-24">
         <div className="mx-auto max-w-7xl">
