@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cleide Beauty Salão ✨
 
-## Getting Started
+### Modern Beauty Salon Website
 
-First, run the development server:
+A modern, responsive website developed for a beauty salon, focused on user experience, online visibility, and accessible service information.
+
+🌐 **Live Website:** https://cleide-beauty-salao.vercel.app/
+
+## 🚀 Technologies
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Git & GitHub
+- Vercel
+
+## ✨ Features
+
+- Responsive layout for desktop and mobile
+- Modern and elegant user interface
+- Beauty services showcase
+- WhatsApp contact and booking integration
+- Search engine optimization (SEO)
+- Production deployment on Vercel
+
+## 💻 Getting Started
+
+Clone the repository:
 
 ```bash
+git clone https://github.com/carolina-dev20/cleide-beauty-salao.git
+cd cleide-beauty-salao
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📸 Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Screenshots of the desktop and mobile versions will be added here.
 
-## Learn More
+## 👩‍💻 Developer
 
-To learn more about Next.js, take a look at the following resources:
+Developed by [Carolina](https://github.com/carolina-dev20).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project demonstrates practical experience in modern frontend development, responsive design, deployment, and SEO.
