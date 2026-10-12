@@ -37,9 +37,17 @@ npm run dev
 
 Open http://localhost:3000 in your browser.
 
+
 ## 📸 Screenshots
 
-Screenshots of the desktop and mobile versions will be added here.
+### 💻 Desktop Version
+
+![Cleide Beauty Salão - Desktop](screenshots/deskstop.png.png)
+
+### 📱 Mobile Version
+
+<img src="screenshots/mobile.png.jpeg" width="300" alt="Cleide Beauty Salão - Mobile Version" />
+  
 
 ## 👩‍💻 Developer
 
