@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -12,7 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://cleide-beauty-salao.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: "Cleide Beauty Salão | Salão de Beleza em Guarulhos",
     template: "%s | Cleide Beauty Salão",
@@ -38,6 +43,10 @@ export const metadata: Metadata = {
   creator: "Cleide Beauty Salão",
   publisher: "Cleide Beauty Salão",
 
+  alternates: {
+    canonical: "/",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -54,6 +63,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: siteUrl,
     siteName: "Cleide Beauty Salão",
     title: "Cleide Beauty Salão | Salão de Beleza em Guarulhos",
     description:
@@ -70,6 +80,59 @@ export const metadata: Metadata = {
   category: "beauty",
 };
 
+const beautySalonSchema = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "@id": `${siteUrl}/#beautysalon`,
+
+  name: "Cleide Beauty Salão",
+
+  url: siteUrl,
+
+  description:
+    "Salão de beleza no Jardim São João, Guarulhos, especializado em cabelos, penteados, design de sobrancelhas e tratamentos capilares.",
+
+  telephone: "+55 11 93736-7090",
+
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rua Caiçara, 257",
+    addressLocality: "Guarulhos",
+    addressRegion: "SP",
+    postalCode: "07151-040",
+    addressCountry: "BR",
+  },
+
+  areaServed: {
+    "@type": "City",
+    name: "Guarulhos",
+  },
+
+  hasMap: "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A",
+
+  sameAs: [
+    "https://www.instagram.com/cleidebeautysalao/",
+  ],
+
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+55 11 93736-7090",
+    contactType: "customer service",
+    availableLanguage: "Portuguese",
+  },
+
+  knowsAbout: [
+    "Corte de cabelo feminino",
+    "Escova",
+    "Penteados",
+    "Design de sobrancelhas",
+    "Tratamentos capilares",
+    "Coloração capilar",
+    "Mechas",
+    "Hidratação capilar",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -81,6 +144,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} min-h-full antialiased`}
       >
         {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(beautySalonSchema).replace(
+              /</g,
+              "\\u003c"
+            ),
+          }}
+        />
       </body>
     </html>
   );
