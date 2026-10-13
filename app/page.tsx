@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -5,6 +6,7 @@ import { useState } from "react";
 import FadeIn from "./components/FadeIn";
 import AgendamentoForm from "./components/AgendamentoForm";
 
+// LINKS DO SALÃO
 const whatsappUrl =
   "https://wa.me/5511937367090?text=Ol%C3%A1%21%20Encontrei%20o%20Cleide%20Beauty%20Sal%C3%A3o%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.";
 
@@ -14,6 +16,7 @@ const instagramUrl =
 const mapsUrl =
   "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A";
 
+// SERVIÇOS
 const servicos = [
   {
     numero: "01",
@@ -41,6 +44,7 @@ const servicos = [
   },
 ];
 
+// RESULTADOS
 const resultados = [
   {
     numero: "01",
@@ -68,23 +72,46 @@ const resultados = [
   },
 ];
 
+// ÍCONES
 function InstagramIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="1.5"
-      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+      <circle
+        cx="17.5"
+        cy="6.5"
+        r="0.8"
+        fill="currentColor"
+        stroke="none"
+      />
     </svg>
   );
 }
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="1.5"
-      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.55-5.25A8.5 8.5 0 1 1 21 11.5Z" />
       <path d="M8.5 8.5c.5 3.5 3 6 6.5 6.5" />
     </svg>
@@ -93,9 +120,17 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
 
 function MapPinIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="1.5"
-      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
       <circle cx="12" cy="10" r="2.5" />
     </svg>
@@ -104,9 +139,16 @@ function MapPinIcon({ size = 20 }: { size?: number }) {
 
 function MenuIcon({ size = 28 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="1.4"
-      strokeLinecap="round" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
       <path d="M4 7h16M4 12h16M4 17h16" />
     </svg>
   );
@@ -114,14 +156,22 @@ function MenuIcon({ size = 28 }: { size?: number }) {
 
 function CloseIcon({ size = 28 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24"
-      fill="none" stroke="currentColor" strokeWidth="1.4"
-      strokeLinecap="round" aria-hidden="true">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
       <path d="M6 6l12 12M18 6L6 18" />
     </svg>
   );
 }
 
+// PÁGINA PRINCIPAL
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
 
@@ -130,11 +180,12 @@ export default function Home() {
       id="inicio"
       className="min-h-screen overflow-x-hidden bg-[#F3ECE4] text-[#1C1C1C]"
     >
-
-
       {/* HEADER */}
       <header className="relative z-50 flex items-center justify-between bg-[#F3ECE4] px-6 py-6 md:px-16 md:py-7 lg:px-24">
-        <a href="#inicio" aria-label="Cleide Beauty Salão - Início">
+        <a
+          href="#inicio"
+          aria-label="Cleide Beauty Salão - Início"
+        >
           <p className="text-xl font-semibold tracking-[0.25em] md:text-2xl">
             CLEIDE
           </p>
@@ -147,24 +198,34 @@ export default function Home() {
           className="hidden items-center gap-10 text-xs tracking-[0.18em] md:flex"
           aria-label="Navegação principal"
         >
-          <a href="#servicos" className="transition-opacity hover:opacity-50">
+          <a
+            href="#servicos"
+            className="transition-opacity hover:opacity-50"
+          >
             SERVIÇOS
           </a>
-          <a href="#sobre" className="transition-opacity hover:opacity-50">
+          <a
+            href="#sobre"
+            className="transition-opacity hover:opacity-50"
+          >
             SOBRE
           </a>
-          <a href="#resultados" className="transition-opacity hover:opacity-50">
+          <a
+            href="#resultados"
+            className="transition-opacity hover:opacity-50"
+          >
             RESULTADOS
           </a>
-          <a href="#localizacao" className="transition-opacity hover:opacity-50">
+          <a
+            href="#localizacao"
+            className="transition-opacity hover:opacity-50"
+          >
             LOCALIZAÇÃO
           </a>
         </nav>
 
         <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contato"
           className="hidden border border-[#8A6748] px-5 py-3 text-[10px] tracking-[0.18em] transition duration-300 hover:bg-[#8A6748] hover:text-white md:block"
         >
           AGENDAR
@@ -187,13 +248,16 @@ export default function Home() {
                 MENU
               </p>
 
-              <nav className="flex flex-col" aria-label="Navegação mobile">
+              <nav
+                className="flex flex-col"
+                aria-label="Navegação mobile"
+              >
                 {[
                   { nome: "Serviços", href: "#servicos" },
                   { nome: "Sobre", href: "#sobre" },
                   { nome: "Resultados", href: "#resultados" },
                   { nome: "Localização", href: "#localizacao" },
-                  { nome: "Contato", href: "#contato" },
+                  { nome: "Agendamento", href: "#contato" },
                 ].map((item) => (
                   <a
                     key={item.href}
@@ -207,14 +271,11 @@ export default function Home() {
               </nav>
 
               <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contato"
                 onClick={() => setMenuAberto(false)}
                 className="mt-10 flex items-center justify-center gap-3 bg-[#8A6748] px-6 py-5 text-center text-xs tracking-[0.2em] text-white"
               >
-                <WhatsAppIcon size={18} />
-                AGENDAR PELO WHATSAPP
+                AGENDAR HORÁRIO
               </a>
             </div>
           </div>
@@ -252,12 +313,10 @@ export default function Home() {
               </p>
 
               <h1 className="text-[42px] font-light leading-[1.03] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[86px] lg:leading-[0.98]">
-                Salão de beleza
-                <br />
-                em Guarulhos
+                Um Salão de Beleza
                 <br />
                 <span className="italic text-[#8A6748]">
-                  feito para você.
+                  Feito Para Você.
                 </span>
               </h1>
 
@@ -265,18 +324,15 @@ export default function Home() {
 
               <p className="mx-auto max-w-xl text-sm leading-7 text-[#57504A] md:text-base lg:mx-0">
                 Cuidado especializado no Jardim São João, Guarulhos,
-                com serviços de cabelo, penteados, design de sobrancelhas
-                e tratamentos capilares.
+                com serviços de cabelo, penteados, design de
+                sobrancelhas e tratamentos capilares.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contato"
                   className="inline-flex w-full max-w-[340px] items-center justify-center gap-3 bg-[#8A6748] px-8 py-5 text-[11px] tracking-[0.18em] text-white transition duration-300 hover:bg-[#6F5037] sm:w-auto"
                 >
-                  <WhatsAppIcon size={17} />
                   AGENDAR HORÁRIO
                 </a>
 
@@ -292,7 +348,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* SERVIÇOS */}
       <section
         id="servicos"
@@ -305,17 +360,19 @@ export default function Home() {
                 <p className="mb-6 text-xs tracking-[0.3em] text-[#B49A7A]">
                   01 / SERVIÇOS
                 </p>
+
                 <h2 className="text-5xl font-light leading-tight md:text-6xl">
                   Beleza e cuidado
                   <br />
                   <span className="italic">em Guarulhos.</span>
                 </h2>
               </div>
+
               <div className="flex items-end">
                 <p className="max-w-md text-sm leading-7 text-[#AAA39C]">
-                  Conheça os serviços do Cleide Beauty Salão no Jardim
-                  São João, com atendimento personalizado para cuidar
-                  da sua beleza e da saúde dos seus fios.
+                  Conheça os serviços do Cleide Beauty Salão no
+                  Jardim São João, com atendimento personalizado
+                  para cuidar da sua beleza e da saúde dos seus fios.
                 </p>
               </div>
             </div>
@@ -323,14 +380,19 @@ export default function Home() {
 
           <div className="border-t border-white/20">
             {servicos.map((servico, index) => (
-              <FadeIn key={servico.numero} delay={index * 100}>
+              <FadeIn
+                key={servico.numero}
+                delay={index * 100}
+              >
                 <div className="grid gap-4 border-b border-white/20 py-8 md:grid-cols-[80px_1fr_1fr]">
                   <span className="text-xs text-[#B49A7A]">
                     {servico.numero}
                   </span>
+
                   <h3 className="text-2xl font-light md:text-3xl">
                     {servico.titulo}
                   </h3>
+
                   <p className="text-sm leading-6 text-[#AAA39C]">
                     {servico.descricao}
                   </p>
@@ -358,6 +420,7 @@ export default function Home() {
                   className="object-cover object-center transition-transform duration-1000 hover:scale-[1.02]"
                 />
               </div>
+
               <p className="mt-4 text-[9px] tracking-[0.28em] text-[#A48160]">
                 CLEIDE BEAUTY SALÃO • GUARULHOS
               </p>
@@ -377,15 +440,17 @@ export default function Home() {
               </h2>
 
               <p className="mt-10 max-w-lg text-base leading-8 text-[#69635D]">
-                O Cleide Beauty Salão está localizado no Jardim São João,
-                em Guarulhos, oferecendo serviços de beleza com atendimento
-                personalizado e atenção aos detalhes.
+                O Cleide Beauty Salão está localizado no Jardim
+                São João, em Guarulhos, oferecendo serviços de
+                beleza com atendimento personalizado e atenção
+                aos detalhes.
               </p>
 
               <p className="mt-5 max-w-lg text-base leading-8 text-[#69635D]">
-                Cabelo, penteados, design de sobrancelhas e tratamentos
-                capilares fazem parte de uma experiência criada para
-                valorizar a beleza e o estilo de cada cliente.
+                Cabelo, penteados, design de sobrancelhas e
+                tratamentos capilares fazem parte de uma
+                experiência criada para valorizar a beleza e
+                o estilo de cada cliente.
               </p>
 
               <div className="mt-12 flex gap-12 border-t border-[#CFC7BE] pt-8">
@@ -429,15 +494,19 @@ export default function Home() {
               </div>
 
               <p className="max-w-sm text-sm leading-7 text-[#69635D]">
-                Conheça alguns resultados realizados no Cleide Beauty
-                Salão, com cuidado, técnica e atenção aos detalhes.
+                Conheça alguns resultados realizados no Cleide
+                Beauty Salão, com cuidado, técnica e atenção
+                aos detalhes.
               </p>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 md:grid-cols-4 md:gap-5">
             {resultados.map((resultado, index) => (
-              <FadeIn key={resultado.numero} delay={index * 100}>
+              <FadeIn
+                key={resultado.numero}
+                delay={index * 100}
+              >
                 <div className="group">
                   <div className="relative aspect-[3/4] overflow-hidden bg-[#D7CBC0]">
                     <Image
@@ -453,6 +522,7 @@ export default function Home() {
                     <p className="text-xs leading-5 md:text-sm">
                       {resultado.titulo}
                     </p>
+
                     <span className="shrink-0 text-[10px] text-[#8A7968]">
                       {resultado.numero}
                     </span>
@@ -477,7 +547,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
 
       {/* LOCALIZAÇÃO E HORÁRIO DE FUNCIONAMENTO */}
       <section
@@ -570,46 +639,41 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* AGENDAMENTO */}
+      {/* AGENDAMENTO COM FORMULÁRIO NA SEÇÃO MARROM */}
       <section
         id="contato"
-        className="bg-[#B59B80] px-8 py-28 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-36"
+        aria-labelledby="titulo-agendamento"
+        className="bg-[#B59B80] px-5 py-20 text-[#1C1C1C] sm:px-8 md:px-16 lg:px-24 lg:py-28"
       >
-        <FadeIn>
-          <div className="mx-auto max-w-5xl text-center">
-            <p className="mb-8 text-xs tracking-[0.35em]">
-              CLEIDE BEAUTY SALÃO • GUARULHOS
-            </p>
+        <div className="mx-auto max-w-5xl">
+          <FadeIn>
+            <div className="mb-10 text-center md:mb-14">
+              <p className="mb-5 text-[10px] tracking-[0.3em] md:text-xs">
+                CLEIDE BEAUTY SALÃO • GUARULHOS
+              </p>
 
-            <h2 className="text-5xl font-light leading-[1.05] md:text-7xl lg:text-8xl">
-              Seu próximo
-              <br />
-              <span className="italic">momento de cuidado.</span>
-            </h2>
-
-            <p className="mx-auto mt-8 max-w-xl text-sm leading-7">
-              Agende seu horário no Cleide Beauty Salão, no Jardim São
-              João, Guarulhos, e venha cuidar da sua beleza.
-            </p>
-
-            <div className="mt-12">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#1C1C1C] px-9 py-5 text-xs tracking-[0.18em] text-white transition duration-300 hover:scale-[1.03] hover:bg-black"
+              <h2
+                id="titulo-agendamento"
+                className="text-4xl font-light leading-tight sm:text-5xl md:text-6xl"
               >
-                <WhatsAppIcon size={19} />
-                AGENDAR PELO WHATSAPP
-              </a>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
+                Seu próximo{" "}
+                <span className="italic">
+                  momento de cuidado.
+                </span>
+              </h2>
 
-      {/* FORMULÁRIO DE AGENDAMENTO */}
-      <AgendamentoForm />
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#3E3127] md:text-base">
+                Escolha seu serviço, informe a data desejada
+                e solicite seu agendamento pelo WhatsApp.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <AgendamentoForm />
+          </FadeIn>
+        </div>
+      </section>
 
       {/* RODAPÉ */}
       <footer className="bg-[#151515] px-8 pb-10 pt-20 text-[#F5F1EB] md:px-16 lg:px-24">
@@ -636,19 +700,38 @@ export default function Home() {
               </p>
 
               <nav className="flex flex-col items-start gap-4 text-sm text-white/70">
-                <a href="#servicos" className="transition hover:text-white">
+                <a
+                  href="#servicos"
+                  className="transition hover:text-white"
+                >
                   Serviços
                 </a>
-                <a href="#sobre" className="transition hover:text-white">
+
+                <a
+                  href="#sobre"
+                  className="transition hover:text-white"
+                >
                   Sobre
                 </a>
-                <a href="#resultados" className="transition hover:text-white">
+
+                <a
+                  href="#resultados"
+                  className="transition hover:text-white"
+                >
                   Resultados
                 </a>
-                <a href="#localizacao" className="transition hover:text-white">
+
+                <a
+                  href="#localizacao"
+                  className="transition hover:text-white"
+                >
                   Localização
                 </a>
-                <a href="#contato" className="transition hover:text-white">
+
+                <a
+                  href="#contato"
+                  className="transition hover:text-white"
+                >
                   Agendamento
                 </a>
               </nav>
@@ -689,6 +772,7 @@ export default function Home() {
                   <span className="mt-[1px] shrink-0">
                     <MapPinIcon size={19} />
                   </span>
+
                   <span>
                     R. Caiçara, 257 - Jardim São João,
                     Guarulhos - SP, 07151-040
@@ -700,8 +784,13 @@ export default function Home() {
 
           <div className="flex flex-col gap-5 pt-8 text-[10px] tracking-[0.12em] text-white/40 md:flex-row md:items-center md:justify-between">
             <p>© 2026 CLEIDE BEAUTY SALÃO</p>
+
             <p>TODOS OS DIREITOS RESERVADOS</p>
-            <a href="#inicio" className="transition hover:text-white">
+
+            <a
+              href="#inicio"
+              className="transition hover:text-white"
+            >
               VOLTAR AO TOPO ↑
             </a>
           </div>
