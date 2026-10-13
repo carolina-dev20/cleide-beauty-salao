@@ -1,14 +1,9 @@
-
 "use client";
 
 import Image from "next/image";
 import { useState } from "react";
 import FadeIn from "./components/FadeIn";
-
 import AgendamentoForm from "./components/AgendamentoForm";
-
-
-/* LINKS */
 
 const whatsappUrl =
   "https://wa.me/5511937367090?text=Ol%C3%A1%21%20Encontrei%20o%20Cleide%20Beauty%20Sal%C3%A3o%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.";
@@ -18,11 +13,6 @@ const instagramUrl =
 
 const mapsUrl =
   "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A";
-
-  
-
-
-/* SERVIÇOS */
 
 const servicos = [
   {
@@ -51,8 +41,6 @@ const servicos = [
   },
 ];
 
-/* RESULTADOS */
-
 const resultados = [
   {
     numero: "01",
@@ -80,21 +68,11 @@ const resultados = [
   },
 ];
 
-/* ÍCONES SVG */
-
 function InstagramIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
@@ -104,17 +82,9 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.55-5.25A8.5 8.5 0 1 1 21 11.5Z" />
       <path d="M8.5 8.5c.5 3.5 3 6 6.5 6.5" />
     </svg>
@@ -123,17 +93,9 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
 
 function MapPinIcon({ size = 20 }: { size?: number }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="1.5"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
       <circle cx="12" cy="10" r="2.5" />
     </svg>
@@ -142,16 +104,9 @@ function MapPinIcon({ size = 20 }: { size?: number }) {
 
 function MenuIcon({ size = 28 }: { size?: number }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      aria-hidden="true"
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="1.4"
+      strokeLinecap="round" aria-hidden="true">
       <path d="M4 7h16M4 12h16M4 17h16" />
     </svg>
   );
@@ -159,22 +114,13 @@ function MenuIcon({ size = 28 }: { size?: number }) {
 
 function CloseIcon({ size = 28 }: { size?: number }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      aria-hidden="true"
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="1.4"
+      strokeLinecap="round" aria-hidden="true">
       <path d="M6 6l12 12M18 6L6 18" />
     </svg>
   );
 }
-
-/* PÁGINA PRINCIPAL */
 
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -184,8 +130,9 @@ export default function Home() {
       id="inicio"
       className="min-h-screen overflow-x-hidden bg-[#F3ECE4] text-[#1C1C1C]"
     >
-      {/* HEADER */}
 
+
+      {/* HEADER */}
       <header className="relative z-50 flex items-center justify-between bg-[#F3ECE4] px-6 py-6 md:px-16 md:py-7 lg:px-24">
         <a href="#inicio" aria-label="Cleide Beauty Salão - Início">
           <p className="text-xl font-semibold tracking-[0.25em] md:text-2xl">
@@ -275,7 +222,6 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-
       <section className="relative min-h-[82vh] overflow-hidden bg-[#F3ECE4] px-6 pb-20 pt-12 md:px-16 lg:px-24 lg:pb-24 lg:pt-16">
         <div className="pointer-events-none absolute right-[1%] top-1/2 hidden h-[610px] w-[610px] -translate-y-1/2 opacity-20 lg:block">
           <Image
@@ -346,8 +292,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVIÇOS */}
 
+      {/* SERVIÇOS */}
       <section
         id="servicos"
         className="bg-[#1C1C1C] px-8 py-24 text-[#F5F1EB] md:px-16 lg:px-24 lg:py-32"
@@ -359,14 +305,12 @@ export default function Home() {
                 <p className="mb-6 text-xs tracking-[0.3em] text-[#B49A7A]">
                   01 / SERVIÇOS
                 </p>
-
                 <h2 className="text-5xl font-light leading-tight md:text-6xl">
                   Beleza e cuidado
                   <br />
                   <span className="italic">em Guarulhos.</span>
                 </h2>
               </div>
-
               <div className="flex items-end">
                 <p className="max-w-md text-sm leading-7 text-[#AAA39C]">
                   Conheça os serviços do Cleide Beauty Salão no Jardim
@@ -384,11 +328,9 @@ export default function Home() {
                   <span className="text-xs text-[#B49A7A]">
                     {servico.numero}
                   </span>
-
                   <h3 className="text-2xl font-light md:text-3xl">
                     {servico.titulo}
                   </h3>
-
                   <p className="text-sm leading-6 text-[#AAA39C]">
                     {servico.descricao}
                   </p>
@@ -400,7 +342,6 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-
       <section
         id="sobre"
         className="bg-[#F5F1EB] px-6 py-24 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-32"
@@ -417,7 +358,6 @@ export default function Home() {
                   className="object-cover object-center transition-transform duration-1000 hover:scale-[1.02]"
                 />
               </div>
-
               <p className="mt-4 text-[9px] tracking-[0.28em] text-[#A48160]">
                 CLEIDE BEAUTY SALÃO • GUARULHOS
               </p>
@@ -468,8 +408,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESULTADOS - GALERIA UNIFORME */}
-
+      {/* RESULTADOS */}
       <section
         id="resultados"
         className="bg-[#E9E1D8] px-6 py-24 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-32"
@@ -496,8 +435,6 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          {/* QUATRO FOTOS COM A MESMA PROPORÇÃO */}
-
           <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 md:grid-cols-4 md:gap-5">
             {resultados.map((resultado, index) => (
               <FadeIn key={resultado.numero} delay={index * 100}>
@@ -516,7 +453,6 @@ export default function Home() {
                     <p className="text-xs leading-5 md:text-sm">
                       {resultado.titulo}
                     </p>
-
                     <span className="shrink-0 text-[10px] text-[#8A7968]">
                       {resultado.numero}
                     </span>
@@ -525,8 +461,6 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-
-          {/* LINK INSTAGRAM */}
 
           <FadeIn>
             <div className="mt-16 flex justify-center md:mt-20">
@@ -544,63 +478,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LOCALIZAÇÃO MINIMALISTA */}
 
+      {/* LOCALIZAÇÃO E HORÁRIO DE FUNCIONAMENTO */}
       <section
         id="localizacao"
         className="bg-[#F5F1EB] px-6 py-20 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-28"
       >
-        <FadeIn>
-          <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn>
             <div className="border-t border-[#CFC7BE] pt-10">
-              <div className="grid gap-12 md:grid-cols-2 md:items-end">
-                <div>
-                  <p className="mb-6 text-[10px] tracking-[0.3em] text-[#A48160]">
-                    04 / LOCALIZAÇÃO
-                  </p>
+              <p className="mb-6 text-[10px] tracking-[0.3em] text-[#A48160]">
+                04 / LOCALIZAÇÃO
+              </p>
 
-                  <h2 className="text-4xl font-light leading-[1.1] md:text-6xl">
-                    Onde
-                    <br />
-                    <span className="italic text-[#8A6748]">
-                      estamos.
-                    </span>
-                  </h2>
-                </div>
-
-                <div className="md:pb-1">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-1 text-[#8A6748]">
-                      <MapPinIcon size={20} />
-                    </span>
-
-                    <div>
-                      <p className="text-base">Cleide Beauty Salão</p>
-                      <p className="mt-2 text-sm leading-6 text-[#69635D]">
-                        Jardim São João
-                        <br />
-                        Guarulhos — SP
-                      </p>
-                    </div>
-                  </div>
-
-                  <a
-                    href={mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-8 inline-block border-b border-[#8A6748] pb-2 text-[10px] tracking-[0.22em] transition-opacity hover:opacity-50"
-                  >
-                    VER NO GOOGLE MAPS ↗
-                  </a>
-                </div>
-              </div>
+              <h2 className="text-4xl font-light leading-[1.1] md:text-6xl">
+                Onde{" "}
+                <span className="italic text-[#8A6748]">
+                  estamos.
+                </span>
+              </h2>
             </div>
+          </FadeIn>
+
+          <div className="mt-12 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            <FadeIn>
+              <div>
+                <h3 className="text-xl font-medium">
+                  Cleide Beauty Salão
+                </h3>
+
+                <address className="mt-4 not-italic text-base leading-8 text-[#69635D]">
+                  R. Caiçara, 257
+                  <br />
+                  Jardim São João, Guarulhos — SP
+                  <br />
+                  07151-040
+                </address>
+
+                <h4 className="mb-5 mt-10 text-[11px] font-medium tracking-[0.2em] text-[#8A6748]">
+                  HORÁRIO DE FUNCIONAMENTO
+                </h4>
+
+                <div className="max-w-md">
+                  {[
+                    ["Terça a sexta", "09h às 19h"],
+                    ["Sábado", "08h às 17h"],
+                    ["Domingo e segunda", "Fechado"],
+                  ].map(([dia, horario]) => (
+                    <div
+                      key={dia}
+                      className="flex items-center justify-between gap-4 border-b border-[#CFC7BE] py-4 text-sm md:text-base"
+                    >
+                      <span>{dia}</span>
+                      <span className="shrink-0 text-[#69635D]">
+                        {horario}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-6 text-sm text-[#69635D]">
+                  Atendimento com horário agendado.
+                </p>
+
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-block border-b border-[#8A6748] pb-2 text-[10px] tracking-[0.22em] transition-opacity hover:opacity-50"
+                >
+                  VER NO GOOGLE MAPS ↗
+                </a>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={150}>
+              <div className="h-[350px] w-full overflow-hidden bg-[#E9E1D8] md:h-[430px]">
+                <iframe
+                  title="Localização do Cleide Beauty Salão em Guarulhos"
+                  src="https://www.google.com/maps?q=R.%20Cai%C3%A7ara%2C%20257%2C%20Jardim%20S%C3%A3o%20Jo%C3%A3o%2C%20Guarulhos%2C%20SP&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+        </div>
       </section>
 
-      {/* AGENDAMENTO */}
 
+      {/* AGENDAMENTO */}
       <section
         id="contato"
         className="bg-[#B59B80] px-8 py-28 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-36"
@@ -637,13 +608,10 @@ export default function Home() {
         </FadeIn>
       </section>
 
+      {/* FORMULÁRIO DE AGENDAMENTO */}
+      <AgendamentoForm />
+
       {/* RODAPÉ */}
-
-      
-{/* FORMULÁRIO DE AGENDAMENTO */}
-<AgendamentoForm />
-
-
       <footer className="bg-[#151515] px-8 pb-10 pt-20 text-[#F5F1EB] md:px-16 lg:px-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 border-b border-white/15 pb-20 md:grid-cols-2 lg:grid-cols-4">
@@ -721,7 +689,10 @@ export default function Home() {
                   <span className="mt-[1px] shrink-0">
                     <MapPinIcon size={19} />
                   </span>
-                  <span>R. Caiçara, 257 - Jardim Sâo João, Guarulhos - SP, 07151-040</span>
+                  <span>
+                    R. Caiçara, 257 - Jardim São João,
+                    Guarulhos - SP, 07151-040
+                  </span>
                 </a>
               </div>
             </div>
@@ -738,7 +709,6 @@ export default function Home() {
       </footer>
 
       {/* WHATSAPP FLUTUANTE */}
-
       <a
         href={whatsappUrl}
         target="_blank"
