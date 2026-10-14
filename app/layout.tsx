@@ -133,28 +133,73 @@ const beautySalonSchema = {
   ],
 };
 
+
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "@id": "https://cleidebeautysalao.com.br/#business",
+
+  name: "Cleide Beauty Salão",
+
+  description:
+    "Salão de beleza no Jardim São João, em Guarulhos, especializado em cuidados capilares, cortes, escovas, coloração, penteados e design de sobrancelhas.",
+
+  url: "https://cleidebeautysalao.com.br/",
+
+  telephone: "+5511937367090",
+
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rua Caiçara, 257",
+    addressLocality: "Guarulhos",
+    addressRegion: "SP",
+    postalCode: "07151-040",
+    addressCountry: "BR",
+  },
+
+  areaServed: {
+    "@type": "City",
+    name: "Guarulhos",
+  },
+
+  sameAs: [
+    "https://www.instagram.com/cleidebeautysalao/",
+    "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A",
+  ],
+};
+
+
+
+
+
+
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+        
   return (
     <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-full antialiased`}
       >
-        {children}
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(beautySalonSchema).replace(
+            __html: JSON.stringify(localBusiness).replace(
               /</g,
               "\\u003c"
             ),
           }}
         />
+
+        {children}
       </body>
     </html>
   );
 }
+
