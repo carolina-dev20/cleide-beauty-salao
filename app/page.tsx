@@ -6,7 +6,10 @@ import { useState } from "react";
 import FadeIn from "./components/FadeIn";
 import AgendamentoForm from "./components/AgendamentoForm";
 
+// ==========================================
 // LINKS DO SALÃO
+// ==========================================
+
 const whatsappUrl =
   "https://wa.me/5511937367090?text=Ol%C3%A1%21%20Encontrei%20o%20Cleide%20Beauty%20Sal%C3%A3o%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.";
 
@@ -16,7 +19,10 @@ const instagramUrl =
 const mapsUrl =
   "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A";
 
+// ==========================================
 // SERVIÇOS
+// ==========================================
+
 const servicos = [
   {
     numero: "01",
@@ -28,22 +34,26 @@ const servicos = [
     numero: "02",
     titulo: "Penteados",
     descricao:
-      "Penteados para festas, eventos e ocasiões especiais.",
+      "Penteados para casamentos, formaturas, festas e ocasiões especiais, com acabamento que dura a noite toda.",
   },
   {
     numero: "03",
     titulo: "Design de sobrancelhas",
     descricao:
-       "Design personalizado, feito de acordo com o formato do seu rosto, para harmonizar e valorizar seus traços."   },
+      "Design personalizado, feito de acordo com o formato do seu rosto, para harmonizar e valorizar seus traços.",
+  },
   {
     numero: "04",
     titulo: "Tratamentos capilares",
     descricao:
-     "Hidratação, reconstrução e nutrição para devolver brilho e saúde aos fios."
+      "Hidratação, reconstrução e nutrição para devolver brilho e saúde aos fios.",
   },
 ];
 
+// ==========================================
 // RESULTADOS
+// ==========================================
+
 const resultados = [
   {
     numero: "01",
@@ -71,7 +81,10 @@ const resultados = [
   },
 ];
 
+// ==========================================
 // ÍCONES
+// ==========================================
+
 function InstagramIcon({ size = 20 }: { size?: number }) {
   return (
     <svg
@@ -170,7 +183,39 @@ function CloseIcon({ size = 28 }: { size?: number }) {
   );
 }
 
+// ==========================================
+// ANIMAÇÃO DO LOGOTIPO
+// ==========================================
+
+function LogoComFade({
+  className,
+  sizes,
+  priority = false,
+}: {
+  className: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <div className={className}>
+      <div className="logo-entrada relative h-full w-full">
+        <Image
+          src="/logo-cleide-transparente.png"
+          alt=""
+          fill
+          priority={priority}
+          sizes={sizes}
+          className="object-contain"
+        />
+      </div>
+    </div>
+  );
+}
+
+// ==========================================
 // PÁGINA PRINCIPAL
+// ==========================================
+
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
 
@@ -179,7 +224,37 @@ export default function Home() {
       id="inicio"
       className="min-h-screen overflow-x-hidden bg-[#F3ECE4] text-[#1C1C1C]"
     >
-      {/* HEADER */}
+      {/* ANIMAÇÃO LOCAL — SEM ALTERAR GLOBALS.CSS */}
+      <style jsx global>{`
+        @keyframes entradaLogoCleide {
+          from {
+            opacity: 0;
+            transform: translateY(28px) scale(0.97);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .logo-entrada {
+          animation: entradaLogoCleide 1.5s ease-out 0.2s both;
+          will-change: opacity, transform;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .logo-entrada {
+            animation: none;
+            will-change: auto;
+          }
+        }
+      `}</style>
+
+      {/* =====================================
+          HEADER
+      ===================================== */}
+
       <header className="relative z-50 flex items-center justify-between bg-[#F3ECE4] px-6 py-6 md:px-16 md:py-7 lg:px-24">
         <a
           href="#inicio"
@@ -188,6 +263,7 @@ export default function Home() {
           <p className="text-xl font-semibold tracking-[0.25em] md:text-2xl">
             CLEIDE
           </p>
+
           <p className="mt-1 text-[8px] tracking-[0.35em] text-[#8A6748] md:text-[9px]">
             BEAUTY SALÃO
           </p>
@@ -203,18 +279,21 @@ export default function Home() {
           >
             SERVIÇOS
           </a>
+
           <a
             href="#sobre"
             className="transition-opacity hover:opacity-50"
           >
             SOBRE
           </a>
+
           <a
             href="#resultados"
             className="transition-opacity hover:opacity-50"
           >
             RESULTADOS
           </a>
+
           <a
             href="#localizacao"
             className="transition-opacity hover:opacity-50"
@@ -281,50 +360,49 @@ export default function Home() {
         )}
       </header>
 
-      {/* HERO */}
-      <section className="relative min-h-[82vh] overflow-hidden bg-[#F3ECE4] px-6 pb-20 pt-12 md:px-16 lg:px-24 lg:pb-24 lg:pt-16">
-        <div className="pointer-events-none absolute right-[1%] top-1/2 hidden h-[610px] w-[610px] -translate-y-1/2 opacity-20 lg:block">
-          <Image
-            src="/logo-cleide-transparente.png"
-            alt=""
-            fill
-            priority
-            sizes="610px"
-            className="object-contain"
-          />
-        </div>
+      {/* =====================================
+          HERO — TEXTO + LOGO COM FADE
+      ===================================== */}
 
-        <div className="pointer-events-none absolute left-1/2 top-[170px] h-[240px] w-[240px] -translate-x-1/2 opacity-[0.08] sm:h-[270px] sm:w-[270px] lg:hidden">
-          <Image
-            src="/logo-cleide-transparente.png"
-            alt=""
-            fill
-            sizes="270px"
-            className="object-contain"
-          />
-        </div>
+      <section className="relative min-h-[82vh] overflow-hidden bg-[#F3ECE4] px-6 pb-20 pt-12 md:px-16 lg:px-24 lg:pb-24 lg:pt-16">
+
+        {/* LOGO NO COMPUTADOR */}
+        <LogoComFade
+          className="pointer-events-none absolute right-[1%] top-1/2 hidden h-[610px] w-[610px] -translate-y-1/2 opacity-20 lg:block"
+          sizes="610px"
+          priority
+        />
+
+        {/* LOGO NO CELULAR */}
+        <LogoComFade
+          className="pointer-events-none absolute left-1/2 top-[170px] h-[240px] w-[240px] -translate-x-1/2 opacity-[0.08] sm:h-[270px] sm:w-[270px] lg:hidden"
+          sizes="270px"
+          priority
+        />
 
         <div className="relative z-10 mx-auto flex min-h-[65vh] max-w-7xl items-center">
           <FadeIn className="w-full">
             <div className="mx-auto w-full max-w-3xl text-center lg:mx-0 lg:text-left">
+
               <p className="mb-8 text-[11px] tracking-[0.3em] text-[#8A6748]">
                 CLEIDE BEAUTY SALÃO • JARDIM SÃO JOÃO
               </p>
 
               <h1 className="text-[42px] font-light leading-[1.03] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[86px] lg:leading-[0.98]">
-                Um Salão De Beleza
+                Sua Beleza Merece
                 <br />
+
                 <span className="italic text-[#8A6748]">
-                  Feito Para Você.
+                  Um Cuidado Especial.
                 </span>
               </h1>
 
               <div className="mx-auto my-9 h-px w-24 bg-[#9B7653] lg:mx-0" />
 
               <p className="mx-auto max-w-xl text-sm leading-7 text-[#57504A] md:text-base lg:mx-0">
-                Cuidado especializado no Jardim São João, Guarulhos,
-                com serviços de cabelo, penteados, design de
-                sobrancelhas e tratamentos capilares.
+                Realce sua beleza em um espaço dedicado a você.
+                Cuidados capilares, penteados e design de
+                sobrancelhas no Jardim São João, em Guarulhos.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -347,7 +425,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVIÇOS */}
+      {/* =====================================
+          SERVIÇOS
+      ===================================== */}
+
       <section
         id="servicos"
         className="bg-[#1C1C1C] px-8 py-24 text-[#F5F1EB] md:px-16 lg:px-24 lg:py-32"
@@ -369,9 +450,12 @@ export default function Home() {
 
               <div className="flex items-end">
                 <p className="max-w-md text-sm leading-7 text-[#AAA39C]">
-                  O Cleide Beauty Salão é o seu salão de beleza no Jardim São João, em Guarulhos, 
-                  com atendimento individual para você sair com o cabelo e o visual que combinam com o 
-                  seu estilo. Aqui, cada cliente é ouvido antes de qualquer procedimento.
+                  O Cleide Beauty Salão é o seu salão de beleza
+                  no Jardim São João, em Guarulhos, com
+                  atendimento individual para você sair com
+                  o cabelo e o visual que combinam com o seu
+                  estilo. Aqui, cada cliente é ouvido antes
+                  de qualquer procedimento.
                 </p>
               </div>
             </div>
@@ -402,7 +486,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOBRE */}
+      {/* =====================================
+          SOBRE
+      ===================================== */}
+
       <section
         id="sobre"
         className="bg-[#F5F1EB] px-6 py-24 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-32"
@@ -435,25 +522,33 @@ export default function Home() {
               <h2 className="text-5xl font-light leading-[1.1] md:text-6xl">
                 Seu salão no
                 <br />
-                <span className="italic">Jardim São João.</span>
+                <span className="italic">
+                  Jardim São João.
+                </span>
               </h2>
 
               <p className="mt-10 max-w-lg text-base leading-8 text-[#69635D]">
-                O Cleide Beauty Salão está localizado no Jardim
-                São João, em Guarulhos, oferecendo serviços de
-                beleza com atendimento personalizado e atenção
-                aos detalhes.
+                O Cleide Beauty Salão está localizado no
+                Jardim São João, em Guarulhos, oferecendo
+                serviços de beleza com atendimento personalizado
+                e atenção aos detalhes.
               </p>
 
               <p className="mt-5 max-w-lg text-base leading-8 text-[#69635D]">
-                Oferecemos corte feminino, coloração, escova, penteados para festas, design de sobrancelhas e
-                 tratamentos capilares como hidratação e reconstrução.
-                 Tudo com produtos profissionais e um ambiente confortável, pensado para você relaxar.
+                Oferecemos corte feminino, coloração, escova,
+                penteados para festas, design de sobrancelhas
+                e tratamentos capilares como hidratação e
+                reconstrução. Tudo com produtos profissionais
+                e um ambiente confortável, pensado para
+                você relaxar.
               </p>
 
               <div className="mt-12 flex gap-12 border-t border-[#CFC7BE] pt-8">
                 <div>
-                  <p className="text-3xl font-light">100%</p>
+                  <p className="text-3xl font-light">
+                    100%
+                  </p>
+
                   <p className="mt-2 text-[10px] tracking-[0.2em] text-[#8A7968]">
                     PERSONALIZADO
                   </p>
@@ -461,6 +556,7 @@ export default function Home() {
 
                 <div>
                   <MapPinIcon size={30} />
+
                   <p className="mt-2 text-[10px] tracking-[0.2em] text-[#8A7968]">
                     GUARULHOS
                   </p>
@@ -471,7 +567,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESULTADOS */}
+      {/* =====================================
+          RESULTADOS
+      ===================================== */}
+
       <section
         id="resultados"
         className="bg-[#E9E1D8] px-6 py-24 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-32"
@@ -487,14 +586,16 @@ export default function Home() {
                 <h2 className="text-5xl font-light leading-[1.05] md:text-6xl">
                   Resultados que
                   <br />
-                  <span className="italic">falam por si.</span>
+                  <span className="italic">
+                    falam por si.
+                  </span>
                 </h2>
               </div>
 
               <p className="max-w-sm text-sm leading-7 text-[#69635D]">
-                Conheça alguns resultados realizados no Cleide
-                Beauty Salão, com cuidado, técnica e atenção
-                aos detalhes.
+                Conheça alguns resultados realizados no
+                Cleide Beauty Salão, com cuidado, técnica
+                e atenção aos detalhes.
               </p>
             </div>
           </FadeIn>
@@ -546,7 +647,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LOCALIZAÇÃO E HORÁRIO DE FUNCIONAMENTO */}
+      {/* =====================================
+          LOCALIZAÇÃO E HORÁRIOS
+      ===================================== */}
+
       <section
         id="localizacao"
         className="bg-[#F5F1EB] px-6 py-20 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-28"
@@ -597,6 +701,7 @@ export default function Home() {
                       className="flex items-center justify-between gap-4 border-b border-[#CFC7BE] py-4 text-sm md:text-base"
                     >
                       <span>{dia}</span>
+
                       <span className="shrink-0 text-[#69635D]">
                         {horario}
                       </span>
@@ -637,7 +742,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AGENDAMENTO COM FORMULÁRIO NA SEÇÃO MARROM */}
+      {/* =====================================
+          AGENDAMENTO
+      ===================================== */}
+
       <section
         id="contato"
         aria-labelledby="titulo-agendamento"
@@ -673,7 +781,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RODAPÉ */}
+      {/* =====================================
+          RODAPÉ
+      ===================================== */}
+
       <footer className="bg-[#151515] px-8 pb-10 pt-20 text-[#F5F1EB] md:px-16 lg:px-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 border-b border-white/15 pb-20 md:grid-cols-2 lg:grid-cols-4">
@@ -687,8 +798,9 @@ export default function Home() {
               </p>
 
               <p className="mt-8 max-w-sm text-sm leading-7 text-white/50">
-                Salão de beleza no Jardim São João, Guarulhos.
-                Beleza, cuidado e experiência em cada detalhe.
+                Salão de beleza no Jardim São João,
+                Guarulhos. Beleza, cuidado e experiência
+                em cada detalhe.
               </p>
             </div>
 
@@ -795,7 +907,10 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* WHATSAPP FLUTUANTE */}
+      {/* =====================================
+          WHATSAPP FLUTUANTE
+      ===================================== */}
+
       <a
         href={whatsappUrl}
         target="_blank"
