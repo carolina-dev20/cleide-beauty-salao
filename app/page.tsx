@@ -34,13 +34,12 @@ const servicos = [
     numero: "03",
     titulo: "Design de sobrancelhas",
     descricao:
-      "Design personalizado para harmonizar e valorizar seus traços.",
-  },
+       "Design personalizado, feito de acordo com o formato do seu rosto, para harmonizar e valorizar seus traços."   },
   {
     numero: "04",
     titulo: "Tratamentos capilares",
     descricao:
-      "Tratamentos para recuperar a força, o brilho e a saúde dos fios.",
+     "Hidratação, reconstrução e nutrição para devolver brilho e saúde aos fios."
   },
 ];
 
@@ -313,7 +312,7 @@ export default function Home() {
               </p>
 
               <h1 className="text-[42px] font-light leading-[1.03] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[86px] lg:leading-[0.98]">
-                Um Salão de Beleza
+                Um Salão De Beleza
                 <br />
                 <span className="italic text-[#8A6748]">
                   Feito Para Você.
@@ -370,9 +369,9 @@ export default function Home() {
 
               <div className="flex items-end">
                 <p className="max-w-md text-sm leading-7 text-[#AAA39C]">
-                  Conheça os serviços do Cleide Beauty Salão no
-                  Jardim São João, com atendimento personalizado
-                  para cuidar da sua beleza e da saúde dos seus fios.
+                  O Cleide Beauty Salão é o seu salão de beleza no Jardim São João, em Guarulhos, 
+                  com atendimento individual para você sair com o cabelo e o visual que combinam com o 
+                  seu estilo. Aqui, cada cliente é ouvido antes de qualquer procedimento.
                 </p>
               </div>
             </div>
@@ -447,10 +446,9 @@ export default function Home() {
               </p>
 
               <p className="mt-5 max-w-lg text-base leading-8 text-[#69635D]">
-                Cabelo, penteados, design de sobrancelhas e
-                tratamentos capilares fazem parte de uma
-                experiência criada para valorizar a beleza e
-                o estilo de cada cliente.
+                Oferecemos corte feminino, coloração, escova, penteados para festas, design de sobrancelhas e
+                 tratamentos capilares como hidratação e reconstrução.
+                 Tudo com produtos profissionais e um ambiente confortável, pensado para você relaxar.
               </p>
 
               <div className="mt-12 flex gap-12 border-t border-[#CFC7BE] pt-8">
