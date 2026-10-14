@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://cleide-beauty-salao.vercel.app";
+const siteUrl = "https://cleidebeautysalao.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
