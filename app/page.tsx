@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import FadeIn from "./components/FadeIn";
 import AgendamentoForm from "./components/AgendamentoForm";
+import PrivacySettingsButton from "./components/PrivacySettingsButton";
 
 // ==========================================
 // LINKS DO SALÃO
@@ -212,9 +213,6 @@ function LogoComFade({
   );
 }
 
-// ==========================================
-// PÁGINA PRINCIPAL
-// ==========================================
 
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -224,14 +222,12 @@ export default function Home() {
       id="inicio"
       className="min-h-screen overflow-x-hidden bg-[#F3ECE4] text-[#1C1C1C]"
     >
-      {/* ANIMAÇÃO LOCAL — SEM ALTERAR GLOBALS.CSS */}
       <style jsx global>{`
         @keyframes entradaLogoCleide {
           from {
             opacity: 0;
             transform: translateY(28px) scale(0.97);
           }
-
           to {
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -251,19 +247,12 @@ export default function Home() {
         }
       `}</style>
 
-      {/* =====================================
-          HEADER
-      ===================================== */}
-
+      {/* HEADER */}
       <header className="relative z-50 flex items-center justify-between bg-[#F3ECE4] px-6 py-6 md:px-16 md:py-7 lg:px-24">
-        <a
-          href="#inicio"
-          aria-label="Cleide Beauty Salão - Início"
-        >
+        <a href="#inicio" aria-label="Cleide Beauty Salão - Início">
           <p className="text-xl font-semibold tracking-[0.25em] md:text-2xl">
             CLEIDE
           </p>
-
           <p className="mt-1 text-[8px] tracking-[0.35em] text-[#8A6748] md:text-[9px]">
             BEAUTY SALÃO
           </p>
@@ -273,31 +262,16 @@ export default function Home() {
           className="hidden items-center gap-10 text-xs tracking-[0.18em] md:flex"
           aria-label="Navegação principal"
         >
-          <a
-            href="#servicos"
-            className="transition-opacity hover:opacity-50"
-          >
+          <a href="#servicos" className="transition-opacity hover:opacity-50">
             SERVIÇOS
           </a>
-
-          <a
-            href="#sobre"
-            className="transition-opacity hover:opacity-50"
-          >
+          <a href="#sobre" className="transition-opacity hover:opacity-50">
             SOBRE
           </a>
-
-          <a
-            href="#resultados"
-            className="transition-opacity hover:opacity-50"
-          >
+          <a href="#resultados" className="transition-opacity hover:opacity-50">
             RESULTADOS
           </a>
-
-          <a
-            href="#localizacao"
-            className="transition-opacity hover:opacity-50"
-          >
+          <a href="#localizacao" className="transition-opacity hover:opacity-50">
             LOCALIZAÇÃO
           </a>
         </nav>
@@ -326,10 +300,7 @@ export default function Home() {
                 MENU
               </p>
 
-              <nav
-                className="flex flex-col"
-                aria-label="Navegação mobile"
-              >
+              <nav className="flex flex-col" aria-label="Navegação mobile">
                 {[
                   { nome: "Serviços", href: "#servicos" },
                   { nome: "Sobre", href: "#sobre" },
@@ -360,20 +331,14 @@ export default function Home() {
         )}
       </header>
 
-      {/* =====================================
-          HERO — TEXTO + LOGO COM FADE
-      ===================================== */}
-
+      {/* HERO */}
       <section className="relative min-h-[82vh] overflow-hidden bg-[#F3ECE4] px-6 pb-20 pt-12 md:px-16 lg:px-24 lg:pb-24 lg:pt-16">
-
-        {/* LOGO NO COMPUTADOR */}
         <LogoComFade
           className="pointer-events-none absolute right-[1%] top-1/2 hidden h-[610px] w-[610px] -translate-y-1/2 opacity-20 lg:block"
           sizes="610px"
           priority
         />
 
-        {/* LOGO NO CELULAR */}
         <LogoComFade
           className="pointer-events-none absolute left-1/2 top-[170px] h-[240px] w-[240px] -translate-x-1/2 opacity-[0.08] sm:h-[270px] sm:w-[270px] lg:hidden"
           sizes="270px"
@@ -383,7 +348,6 @@ export default function Home() {
         <div className="relative z-10 mx-auto flex min-h-[65vh] max-w-7xl items-center">
           <FadeIn className="w-full">
             <div className="mx-auto w-full max-w-3xl text-center lg:mx-0 lg:text-left">
-
               <p className="mb-8 text-[11px] tracking-[0.3em] text-[#8A6748]">
                 CLEIDE BEAUTY SALÃO • JARDIM SÃO JOÃO
               </p>
@@ -391,7 +355,6 @@ export default function Home() {
               <h1 className="text-[42px] font-light leading-[1.03] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[86px] lg:leading-[0.98]">
                 Sua Beleza Merece
                 <br />
-
                 <span className="italic text-[#8A6748]">
                   Um Cuidado Especial.
                 </span>
@@ -425,10 +388,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          SERVIÇOS
-      ===================================== */}
 
+      {/* SERVIÇOS */}
       <section
         id="servicos"
         className="bg-[#1C1C1C] px-8 py-24 text-[#F5F1EB] md:px-16 lg:px-24 lg:py-32"
@@ -440,7 +401,6 @@ export default function Home() {
                 <p className="mb-6 text-xs tracking-[0.3em] text-[#B49A7A]">
                   01 / SERVIÇOS
                 </p>
-
                 <h2 className="text-5xl font-light leading-tight md:text-6xl">
                   Beleza e cuidado
                   <br />
@@ -463,10 +423,7 @@ export default function Home() {
 
           <div className="border-t border-white/20">
             {servicos.map((servico, index) => (
-              <FadeIn
-                key={servico.numero}
-                delay={index * 100}
-              >
+              <FadeIn key={servico.numero} delay={index * 100}>
                 <div className="grid gap-4 border-b border-white/20 py-8 md:grid-cols-[80px_1fr_1fr]">
                   <span className="text-xs text-[#B49A7A]">
                     {servico.numero}
@@ -486,10 +443,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          SOBRE
-      ===================================== */}
-
+      {/* SOBRE */}
       <section
         id="sobre"
         className="bg-[#F5F1EB] px-6 py-24 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-32"
@@ -522,9 +476,7 @@ export default function Home() {
               <h2 className="text-5xl font-light leading-[1.1] md:text-6xl">
                 Seu salão no
                 <br />
-                <span className="italic">
-                  Jardim São João.
-                </span>
+                <span className="italic">Jardim São João.</span>
               </h2>
 
               <p className="mt-10 max-w-lg text-base leading-8 text-[#69635D]">
@@ -545,10 +497,7 @@ export default function Home() {
 
               <div className="mt-12 flex gap-12 border-t border-[#CFC7BE] pt-8">
                 <div>
-                  <p className="text-3xl font-light">
-                    100%
-                  </p>
-
+                  <p className="text-3xl font-light">100%</p>
                   <p className="mt-2 text-[10px] tracking-[0.2em] text-[#8A7968]">
                     PERSONALIZADO
                   </p>
@@ -556,7 +505,6 @@ export default function Home() {
 
                 <div>
                   <MapPinIcon size={30} />
-
                   <p className="mt-2 text-[10px] tracking-[0.2em] text-[#8A7968]">
                     GUARULHOS
                   </p>
@@ -567,10 +515,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          RESULTADOS
-      ===================================== */}
-
+      {/* RESULTADOS */}
       <section
         id="resultados"
         className="bg-[#E9E1D8] px-6 py-24 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-32"
@@ -586,9 +531,7 @@ export default function Home() {
                 <h2 className="text-5xl font-light leading-[1.05] md:text-6xl">
                   Resultados que
                   <br />
-                  <span className="italic">
-                    falam por si.
-                  </span>
+                  <span className="italic">falam por si.</span>
                 </h2>
               </div>
 
@@ -602,10 +545,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 md:grid-cols-4 md:gap-5">
             {resultados.map((resultado, index) => (
-              <FadeIn
-                key={resultado.numero}
-                delay={index * 100}
-              >
+              <FadeIn key={resultado.numero} delay={index * 100}>
                 <div className="group">
                   <div className="relative aspect-[3/4] overflow-hidden bg-[#D7CBC0]">
                     <Image
@@ -621,7 +561,6 @@ export default function Home() {
                     <p className="text-xs leading-5 md:text-sm">
                       {resultado.titulo}
                     </p>
-
                     <span className="shrink-0 text-[10px] text-[#8A7968]">
                       {resultado.numero}
                     </span>
@@ -647,10 +586,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          LOCALIZAÇÃO E HORÁRIOS
-      ===================================== */}
 
+      {/* LOCALIZAÇÃO E HORÁRIOS */}
       <section
         id="localizacao"
         className="bg-[#F5F1EB] px-6 py-20 text-[#1C1C1C] md:px-16 lg:px-24 lg:py-28"
@@ -701,7 +638,6 @@ export default function Home() {
                       className="flex items-center justify-between gap-4 border-b border-[#CFC7BE] py-4 text-sm md:text-base"
                     >
                       <span>{dia}</span>
-
                       <span className="shrink-0 text-[#69635D]">
                         {horario}
                       </span>
@@ -742,10 +678,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          AGENDAMENTO
-      ===================================== */}
-
+      {/* AGENDAMENTO */}
       <section
         id="contato"
         aria-labelledby="titulo-agendamento"
@@ -781,10 +714,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          RODAPÉ
-      ===================================== */}
-
+      {/* RODAPÉ */}
       <footer className="bg-[#151515] px-8 pb-10 pt-20 text-[#F5F1EB] md:px-16 lg:px-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 border-b border-white/15 pb-20 md:grid-cols-2 lg:grid-cols-4">
@@ -810,38 +740,19 @@ export default function Home() {
               </p>
 
               <nav className="flex flex-col items-start gap-4 text-sm text-white/70">
-                <a
-                  href="#servicos"
-                  className="transition hover:text-white"
-                >
+                <a href="#servicos" className="transition hover:text-white">
                   Serviços
                 </a>
-
-                <a
-                  href="#sobre"
-                  className="transition hover:text-white"
-                >
+                <a href="#sobre" className="transition hover:text-white">
                   Sobre
                 </a>
-
-                <a
-                  href="#resultados"
-                  className="transition hover:text-white"
-                >
+                <a href="#resultados" className="transition hover:text-white">
                   Resultados
                 </a>
-
-                <a
-                  href="#localizacao"
-                  className="transition hover:text-white"
-                >
+                <a href="#localizacao" className="transition hover:text-white">
                   Localização
                 </a>
-
-                <a
-                  href="#contato"
-                  className="transition hover:text-white"
-                >
+                <a href="#contato" className="transition hover:text-white">
                   Agendamento
                 </a>
               </nav>
@@ -892,10 +803,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 pt-8 text-[10px] tracking-[0.12em] text-white/40 md:flex-row md:items-center md:justify-between">
+          {/* LINHA INFERIOR ATUALIZADA */}
+          <div className="flex flex-col gap-6 pt-8 text-[10px] tracking-[0.12em] text-white/40 md:flex-row md:items-center md:justify-between">
             <p>© 2026 CLEIDE BEAUTY SALÃO</p>
 
-            <p>TODOS OS DIREITOS RESERVADOS</p>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href="/politica-de-privacidade"
+                className="transition hover:text-[#B59B80]"
+              >
+                POLÍTICA DE PRIVACIDADE
+              </a>
+
+              <div className="[&_button]:cursor-pointer [&_button]:text-[10px] [&_button]:tracking-[0.12em] [&_button]:text-white/40 [&_button]:no-underline [&_button:hover]:text-[#B59B80]">
+                <PrivacySettingsButton />
+              </div>
+            </div>
 
             <a
               href="#inicio"
@@ -907,10 +830,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* =====================================
-          WHATSAPP FLUTUANTE
-      ===================================== */}
-
+      {/* WHATSAPP FLUTUANTE */}
       <a
         href={whatsappUrl}
         target="_blank"

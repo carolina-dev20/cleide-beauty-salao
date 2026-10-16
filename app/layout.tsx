@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import CookieConsent from "./components/CookieConsent";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -80,19 +83,18 @@ export const metadata: Metadata = {
   category: "beauty",
 };
 
-const beautySalonSchema = {
+const localBusiness = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
-  "@id": `${siteUrl}/#beautysalon`,
+  "@id": `${siteUrl}/#business`,
 
   name: "Cleide Beauty Salão",
-
-  url: siteUrl,
+  url: `${siteUrl}/`,
 
   description:
-    "Salão de beleza no Jardim São João, Guarulhos, especializado em cabelos, penteados, design de sobrancelhas e tratamentos capilares.",
+    "Salão de beleza no Jardim São João, em Guarulhos, especializado em cuidados capilares, cortes, escovas, coloração, penteados e design de sobrancelhas.",
 
-  telephone: "+55 11 93736-7090",
+  telephone: "+5511937367090",
 
   address: {
     "@type": "PostalAddress",
@@ -112,11 +114,12 @@ const beautySalonSchema = {
 
   sameAs: [
     "https://www.instagram.com/cleidebeautysalao/",
+    "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A",
   ],
 
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55 11 93736-7090",
+    telephone: "+5511937367090",
     contactType: "customer service",
     availableLanguage: "Portuguese",
   },
@@ -133,55 +136,11 @@ const beautySalonSchema = {
   ],
 };
 
-
-const localBusiness = {
-  "@context": "https://schema.org",
-  "@type": "BeautySalon",
-  "@id": "https://cleidebeautysalao.com.br/#business",
-
-  name: "Cleide Beauty Salão",
-
-  description:
-    "Salão de beleza no Jardim São João, em Guarulhos, especializado em cuidados capilares, cortes, escovas, coloração, penteados e design de sobrancelhas.",
-
-  url: "https://cleidebeautysalao.com.br/",
-
-  telephone: "+5511937367090",
-
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Rua Caiçara, 257",
-    addressLocality: "Guarulhos",
-    addressRegion: "SP",
-    postalCode: "07151-040",
-    addressCountry: "BR",
-  },
-
-  areaServed: {
-    "@type": "City",
-    name: "Guarulhos",
-  },
-
-  sameAs: [
-    "https://www.instagram.com/cleidebeautysalao/",
-    "https://maps.app.goo.gl/7xAtNkbc5DRCaQs3A",
-  ],
-};
-
-
-
-
-
-
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
-        
   return (
     <html lang="pt-BR">
       <body
@@ -197,9 +156,12 @@ export default function RootLayout({
           }}
         />
 
+        <GoogleAnalytics />
+
         {children}
+
+        <CookieConsent />
       </body>
     </html>
   );
 }
-
